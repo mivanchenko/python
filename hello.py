@@ -107,30 +107,41 @@
 #
 #say('Hello')
 #say('World', 5)
+#
+#def func(a, b=5, c=10):
+#    print('a: {} b: {} c: {}'.format(a, b, c))
+#
+#func( 1, c = 42 )
+#func( c = 42, a = 100 )
+#
+#def total(a=5, *numbers, **phonebook):
+#    print('a', a)
+#
+#    for single_item in numbers:
+#        print('single_item', single_item)
+#
+#    for first_part, second_part in phonebook.items():
+#        print(first_part, second_part)
+#    return 1
+#
+#print( total( 10, 1, 2, 3, Jack = 1123, John = 2231, Inge = 1560 ) )
 
-def func(a, b=5, c=10):
-    print('a: {} b: {} c: {}'.format(a, b, c))
+def print_max(x, y):
+    '''
+    Prints the maximum of two numbers.
 
-func( 1, c = 42 )
-func( c = 42, a = 100 )
+    The two values must be integers.
+    '''
+    # convert to integers, if possible
+    x = int(x)
+    y = int(y)
 
-def total(a=5, *numbers, **phonebook):
-    print('a', a)
+    if x > y:
+        print(x, 'is maximum')
+    else:
+        print(y, 'is maximum')
 
-    for single_item in numbers:
-        print('single_item', single_item)
-
-    for first_part, second_part in phonebook.items():
-        print(first_part, second_part)
-
-print( total( 10, 1, 2, 3, Jack = 1123, John = 2231, Inge = 1560 ) )
-
-
-
-
-
-
-
-
-
+print_max(3, 5)
+#print( print_max.__doc__ )
+help(print_max)
 
