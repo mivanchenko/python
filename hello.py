@@ -125,23 +125,54 @@
 #    return 1
 #
 #print( total( 10, 1, 2, 3, Jack = 1123, John = 2231, Inge = 1560 ) )
+#
+#def print_max(x, y):
+#    '''
+#    Prints the maximum of two numbers.
+#
+#    The two values must be integers.
+#    '''
+#    # convert to integers, if possible
+#    x = int(x)
+#    y = int(y)
+#
+#    if x > y:
+#        print(x, 'is maximum')
+#    else:
+#        print(y, 'is maximum')
+#
+#print_max(3, 5)
+##print( print_max.__doc__ )
+#help(print_max)
+#
+#import sys
+#import os
+#from math import sqrt
+#
+#print('The command line arguments are:')
+#for i in sys.argv:
+#    print(i)
+#print('\n\nThe Python path is', sys.path, '\n')
+#print(os.getcwd())
+#print('Sq root of 16 is', sqrt(16))
+#
+#if __name__ == '__main__':
+#    print('This program is being run by itself')
+#else:
+#    print('I am being imported from another module')
 
-def print_max(x, y):
-    '''
-    Prints the maximum of two numbers.
+def hi():
+    print('Hello, my module is speaking')
 
-    The two values must be integers.
-    '''
-    # convert to integers, if possible
-    x = int(x)
-    y = int(y)
+__version__ = '0.1'
 
-    if x > y:
-        print(x, 'is maximum')
-    else:
-        print(y, 'is maximum')
 
-print_max(3, 5)
-#print( print_max.__doc__ )
-help(print_max)
+
+
+
+
+
+
+
+
 
