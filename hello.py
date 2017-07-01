@@ -142,7 +142,7 @@
 #        print(y, 'is maximum')
 #
 #print_max(3, 5)
-##print( print_max.__doc__ )
+#print( print_max.__doc__ )
 #help(print_max)
 #
 #import sys
@@ -160,12 +160,11 @@
 #    print('This program is being run by itself')
 #else:
 #    print('I am being imported from another module')
-
-def hi():
-    print('Hello, my module is speaking')
-
-__version__ = '0.1'
-
+#
+#def hi():
+#    print('Hello, my module is speaking')
+#
+#__version__ = '0.1'
 
 
 
