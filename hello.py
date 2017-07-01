@@ -165,13 +165,50 @@
 #    print('Hello, my module is speaking')
 #
 #__version__ = '0.1'
+#
+#shoplist = ['apple', 'mango']
+#print('I have', len(shoplist), 'items to purchase')
+#print('These items are:', end=' ')
+#
+#for item in shoplist:
+#    print(item, end=' ')
+#
+#print('\nI also have to buy rice')
+#shoplist.append('rice')
+#
+#print('My shopping list now is', shoplist)
+#shoplist.sort()
+#print('My shopping list now is', shoplist)
+#
+#print('The first item I will buy is', shoplist[0])
+#olditem = shoplist[0]
+#del shoplist[0]
+#print('I bought one', olditem)
+#print('My shopping list now is', shoplist)
+#
+#zoo = ('python', 'elephant', 'penguin')
+#print('Number of animals in the zoo is', len(zoo))
+#
+#new_zoo = 'monkey', 'camel', zoo
+#print('Number of cages in the new zoo is', len(new_zoo))
+#print('All animals in new zoo are', new_zoo)
 
+ab = {
+    'Swaroop' : 'swaroop@swaroopch.com',
+    'Larry'   : 'larry@wall.org',
+    'Spammer' : 'spammer@hotmail.com'
+}
 
+print("Swaroop's address is", ab['Swaroop'])
 
+del ab['Spammer']
 
+print('\nThere are {} contacts in the address book'.format(len(ab)))
 
+for name, address in ab.items():
+    print('Contact {} at {}'.format(name, address))
 
+ab['Guido'] = 'guido@python.org'
 
-
-
-
+if 'Guido' in ab:
+    print("\nGuido's address is", ab['Guido'])
