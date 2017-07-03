@@ -166,32 +166,32 @@
 #
 #__version__ = '0.1'
 #
-#shoplist = ['apple', 'mango']
-#print('I have', len(shoplist), 'items to purchase')
-#print('These items are:', end=' ')
-#
-#for item in shoplist:
-#    print(item, end=' ')
-#
-#print('\nI also have to buy rice')
-#shoplist.append('rice')
-#
-#print('My shopping list now is', shoplist)
-#shoplist.sort()
-#print('My shopping list now is', shoplist)
-#
-#print('The first item I will buy is', shoplist[0])
-#olditem = shoplist[0]
-#del shoplist[0]
-#print('I bought one', olditem)
-#print('My shopping list now is', shoplist)
-#
-#zoo = ('python', 'elephant', 'penguin')
-#print('Number of animals in the zoo is', len(zoo))
-#
-#new_zoo = 'monkey', 'camel', zoo
-#print('Number of cages in the new zoo is', len(new_zoo))
-#print('All animals in new zoo are', new_zoo)
+shoplist = ['apple', 'mango']
+print('I have', len(shoplist), 'items to purchase')
+print('These items are:', end=' ')
+
+for item in shoplist:
+    print(item, end=' ')
+
+print('\nI also have to buy rice')
+shoplist.append('rice')
+
+print('My shopping list now is', shoplist)
+shoplist.sort()
+print('My shopping list now is', shoplist)
+
+print('The first item I will buy is', shoplist[0])
+olditem = shoplist[0]
+del shoplist[0]
+print('I bought one', olditem)
+print('My shopping list now is', shoplist)
+
+zoo = ('python', 'elephant', 'penguin')
+print('Number of animals in the zoo is', len(zoo))
+
+new_zoo = 'monkey', 'camel', zoo
+print('Number of cages in the new zoo is', len(new_zoo))
+print('All animals in new zoo are', new_zoo)
 
 ab = {
     'Swaroop' : 'swaroop@swaroopch.com',
