@@ -1,5 +1,6 @@
 #print("Hello, world", end=';')
 #print('{0:.3f}'.format(1.0/3))
+#print('{:.3f}'.format(1.0/3), '{}'.format('hello'))
 #print('{0:_^11}'.format('hello'))
 #print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
 #
@@ -126,12 +127,16 @@
 #
 #print( total( 10, 1, 2, 3, Jack = 1123, John = 2231, Inge = 1560 ) )
 #
-#def print_max(x, y):
-#    '''
-#    Prints the maximum of two numbers.
+#def func():
+#    pass
 #
-#    The two values must be integers.
-#    '''
+#print(func())
+#print(func)
+#
+#def print_max(x, y):
+#    '''Prints the maximum of two numbers.
+#
+#    The two values must be integers.'''
 #    # convert to integers, if possible
 #    x = int(x)
 #    y = int(y)
@@ -152,7 +157,7 @@
 #print('The command line arguments are:')
 #for i in sys.argv:
 #    print(i)
-#print('\n\nThe Python path is', sys.path, '\n')
+#print('The Python path is', sys.path)
 #print(os.getcwd())
 #print('Sq root of 16 is', sqrt(16))
 #
@@ -166,49 +171,50 @@
 #
 #__version__ = '0.1'
 #
-shoplist = ['apple', 'mango']
-print('I have', len(shoplist), 'items to purchase')
-print('These items are:', end=' ')
+#shoplist = ['apple', 'mango']
+#print('I have', len(shoplist), 'items to purchase')
+#print('These items are:', end=' ')
+#
+#for item in shoplist:
+#    print(item, end=' ')
+#
+#print('\nI also have to buy rice')
+#shoplist.append('rice')
+#
+#print('My shopping list now is', shoplist)
+#shoplist.sort()
+#print('My shopping list now is', shoplist)
+#
+#print('The first item I will buy is', shoplist[0])
+#olditem = shoplist[0]
+#del shoplist[0]
+#print('I bought one', olditem)
+#print('My shopping list now is', shoplist)
+#
+#zoo = ('python', 'elephant', 'penguin')
+#print('Number of animals in the zoo is', len(zoo))
+#
+#new_zoo = 'monkey', 'camel', zoo
+#print('Number of cages in the new zoo is', len(new_zoo))
+#print('All animals in new zoo are', new_zoo)
+#
+#ab = {
+#    'Swaroop' : 'swaroop@swaroopch.com',
+#    'Larry'   : 'larry@wall.org',
+#    'Spammer' : 'spammer@hotmail.com'
+#}
+#
+#print("Swaroop's address is", ab['Swaroop'])
+#
+#del ab['Spammer']
+#
+#print('\nThere are {} contacts in the address book'.format(len(ab)))
+#
+#for name, address in ab.items():
+#    print('Contact {} at {}'.format(name, address))
+#
+#ab['Guido'] = 'guido@python.org'
+#
+#if 'Guido' in ab:
+#    print("\nGuido's address is", ab['Guido'])
 
-for item in shoplist:
-    print(item, end=' ')
-
-print('\nI also have to buy rice')
-shoplist.append('rice')
-
-print('My shopping list now is', shoplist)
-shoplist.sort()
-print('My shopping list now is', shoplist)
-
-print('The first item I will buy is', shoplist[0])
-olditem = shoplist[0]
-del shoplist[0]
-print('I bought one', olditem)
-print('My shopping list now is', shoplist)
-
-zoo = ('python', 'elephant', 'penguin')
-print('Number of animals in the zoo is', len(zoo))
-
-new_zoo = 'monkey', 'camel', zoo
-print('Number of cages in the new zoo is', len(new_zoo))
-print('All animals in new zoo are', new_zoo)
-
-ab = {
-    'Swaroop' : 'swaroop@swaroopch.com',
-    'Larry'   : 'larry@wall.org',
-    'Spammer' : 'spammer@hotmail.com'
-}
-
-print("Swaroop's address is", ab['Swaroop'])
-
-del ab['Spammer']
-
-print('\nThere are {} contacts in the address book'.format(len(ab)))
-
-for name, address in ab.items():
-    print('Contact {} at {}'.format(name, address))
-
-ab['Guido'] = 'guido@python.org'
-
-if 'Guido' in ab:
-    print("\nGuido's address is", ab['Guido'])
