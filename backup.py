@@ -2,7 +2,7 @@ import os
 import time
 import zipfile
 
-source = ['source']
+sources = ['source/file1', 'source/file2']
 
 target_dir = 'dest'
 
@@ -18,10 +18,17 @@ if not os.path.exists(today):
     os.mkdir(today)
     print('Created dir', today)
 
-zip_command = 'zip -r {} {}'.format(target, ' '.join(source))
-print(zip_command)
+print(target)
 
-if os.system(zip_command) == 0:
-    print('Backed up to [{}]'.format(target))
-else:
-    print('Backup failed')
+zip_archive = zipfile.ZipFile(target, 'w')
+for source in (sources):
+    zip_archive.write(source)
+zip_archive.close()
+
+#zip_command = 'zip -r {} {}'.format(target, ' '.join(sources))
+#print(zip_command)
+#
+#if os.system(zip_command) == 0:
+#    print('Backed up to [{}]'.format(target))
+#else:
+#    print('Backup failed')
