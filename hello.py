@@ -218,3 +218,12 @@
 #if 'Guido' in ab:
 #    print("\nGuido's address is", ab['Guido'])
 
+#print('{:{prec}} = {:{prec}}'.format('Gibberish', 2.7182, prec='.3'))
+#print('{:.3}'.format('Gibberish'))
+#print('{:.3}'.format(2.7182))
+#print('{:04d}'.format(42))
+#print('{:f}'.format(3.141592653589793))
+#print('[{:10.5}]'.format('xylophone'))
+#print('{:04.2f}'.format(1))
+#print('{:06.2f}'.format(3.141592653589793))
+#print('{:{width}.{prec}f}'.format(2.7182, width=5, prec=2))
