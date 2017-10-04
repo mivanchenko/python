@@ -1,7 +1,13 @@
 #print("Hello, world", end=';')
 #print('{0:.3f}'.format(1.0/3))
 #print('{:.3f}'.format(1.0/3), '{}'.format('hello'))
-#print('{0:_^11}'.format('hello'))
+
+#print('[{0:_^11}]'.format('hello'))
+#print('[{0:_^11}]'.format('привіт'))
+#print('[%10s]' % ('привіт',))
+#print('[{:10}]'.format('привіт'))
+#print('[{:>10}]'.format('привіт'))
+
 #print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
 #
 #age = 20
