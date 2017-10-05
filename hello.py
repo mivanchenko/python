@@ -7,6 +7,8 @@
 #print('[%10s]' % ('привіт',))
 #print('[{:10}]'.format('привіт'))
 #print('[{:>10}]'.format('привіт'))
+print('[{:>20}]'.format('☂ привіт☎ '))
+print('[%20s]' % ('☂ привіт☎ '))
 
 #print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
 #
