@@ -1,7 +1,10 @@
 def get_error_details():
-    return (2, 'details')
+#    return (2, 'details')
+#    return (42)
+    return (42, 'details')
 errnum, errstr = get_error_details()
 #print(errnum, errstr)
+#print(errnum)
 
 
 flag = True
@@ -10,13 +13,14 @@ flag = True
 
 points = [{'x': 2, 'y': 3},
           {'x': 4, 'y': 1}]
-points.sort(key=lambda i: i['x'])
+points.sort( key = lambda elem: elem['y'] )
 #print(points)
 
 
 list1 = [2, 3, 4]
 #print(list1)
 list2 = [ 2*i for i in list1 if i > 2 ]
+#list2 = [ 2*i for i in list1 ]
 #print(list2)
 
 
@@ -31,9 +35,9 @@ def power_sum(power, *args):
 #print( power_sum(2, 10) )
 
 
-#mylist = ['item']
-#assert len(mylist) >= 1
-#mylist.pop()
+mylist = ['item']
+assert len(mylist) >= 1
+mylist.pop()
 #assert len(mylist) >= 1
 
 
@@ -56,6 +60,7 @@ def retry(f):
                         attempt, MAX_ATTEMPTS, (args, kwargs)
                     )
                 )
+                sleep(10 * attempt)
         log.critical('All {} attempts failed: {}'.format(MAX_ATTEMPTS, (args, kwargs)))
     return wrapper_function
 
@@ -73,13 +78,7 @@ def save_to_database(arg):
 #    save_to_database("Some bad value")
 
 
-import six
+#import six
 #print(six.PY2)
 #print(six.PY3)
-
-
-
-
-
-
 

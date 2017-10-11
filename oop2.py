@@ -31,12 +31,12 @@ class Student(SchoolMember):
         SchoolMember.tell(self)
         print('Marks: "{:d}"'.format(self.marks))
 
-t = Teacher('Mrs. Shrividya', 40, 30000)
-s = Student('Swaroop', 25, 75)
+#t = Teacher('Mrs. Shrividya', 40, 30000)
+#s = Student('Swaroop', 25, 75)
 
-print()
+#print()
 
-members = [t, s]
+#members = [t, s]
 
-for member in members:
-    member.tell()
+#for member in members:
+#    member.tell()

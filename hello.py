@@ -7,8 +7,8 @@
 #print('[%10s]' % ('привіт',))
 #print('[{:10}]'.format('привіт'))
 #print('[{:>10}]'.format('привіт'))
-print('[{:>20}]'.format('☂ привіт☎ '))
-print('[%20s]' % ('☂ привіт☎ '))
+#print('[{:>20}]'.format('☂ привіт☎ '))
+#print('[%20s]' % ('☂ привіт☎ '))
 
 #print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
 #
@@ -55,13 +55,18 @@ print('[%20s]' % ('☂ привіт☎ '))
 #else:
 #    print('The for loop is over')
 #
-#
+
 #for i in list(range(5)):
 #    print(i)
 #else:
 #    print('The for loop is over')
+
+#for i in range(2, 5):
+#    print(i)
+#else:
+#    print('The for loop is over')
 #
-#
+
 #for i in list(range(1, 5, 2)):
 #    print(i)
 #else:
@@ -101,6 +106,7 @@ print('[%20s]' % ('☂ привіт☎ '))
 #print_max(x, y)
 #
 #x = 50
+#y = 7
 #
 #def func():
 #    print('y is', y)
@@ -110,6 +116,8 @@ print('[%20s]' % ('☂ привіт☎ '))
 #    print('x is', x)
 #
 #func()
+#
+#print(x)
 #
 #def say(message, times=1):
 #    print(message * times)
@@ -178,6 +186,7 @@ print('[%20s]' % ('☂ привіт☎ '))
 #    print('Hello, my module is speaking')
 #
 #__version__ = '0.1'
+#print(__doc__)
 #
 #shoplist = ['apple', 'mango']
 #print('I have', len(shoplist), 'items to purchase')

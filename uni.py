@@ -19,4 +19,5 @@ import re
 p = re.compile('\d+', re.ASCII)
 s = "Over \u0e55\u0e57 57 flavours"
 m = p.search(s)
-print(repr(m.group()))
+#print(repr(m.group()))
+#print(m.group())
