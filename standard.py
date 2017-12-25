@@ -1,5 +1,5 @@
-import sys
-
+#import sys
+#
 #print(sys.version_info)
 #print(sys.version_info.major == 3)
 
@@ -8,7 +8,7 @@ import sys
 #import platform
 #import logging
 #
-##print(os.path)
+#print(os.path)
 #if platform.platform().startswith('Windows'):
 #    logging_file = os.path.join(
 #        os.getenv('HOMEDRIVE'), os.getenv('HOMEPATH'), 'test.log'
@@ -50,4 +50,4 @@ import sys
 #
 #args = parser.parse_args()
 #print(args.accumulate(args.integers))
-#
+

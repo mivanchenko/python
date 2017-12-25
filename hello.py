@@ -1,9 +1,7 @@
 #print("Hello, world", end=';')
 #print('{0:.3f}'.format(1.0/3))
 #print('{:.3f}'.format(1.0/3), '{}'.format('hello'))
-
-#print('[{0:_^11}]'.format('hello'))
-#print('[{0:_^11}]'.format('привіт'))
+#print('[{1:_^11}]\n[{0:_^11}]'.format('hello', 'привіт'))
 #print('[%10s]' % ('привіт',))
 #print('[{:10}]'.format('привіт'))
 #print('[{:>10}]'.format('привіт'))
@@ -186,6 +184,8 @@
 #    print('Hello, my module is speaking')
 #
 #__version__ = '0.1'
+#
+#print(dir())
 #print(__doc__)
 #
 #shoplist = ['apple', 'mango']
@@ -218,7 +218,8 @@
 #ab = {
 #    'Swaroop' : 'swaroop@swaroopch.com',
 #    'Larry'   : 'larry@wall.org',
-#    'Spammer' : 'spammer@hotmail.com'
+#    'Matsumoto': 'matz@ruby-lang.org',
+#    'Spammer' : 'spammer@hotmail.com',
 #}
 #
 #print("Swaroop's address is", ab['Swaroop'])
@@ -228,13 +229,13 @@
 #print('\nThere are {} contacts in the address book'.format(len(ab)))
 #
 #for name, address in ab.items():
-#    print('Contact {} at {}'.format(name, address))
+#    print('Contact {1} at {0}'.format(name, address))
 #
 #ab['Guido'] = 'guido@python.org'
 #
 #if 'Guido' in ab:
 #    print("\nGuido's address is", ab['Guido'])
-
+#
 #print('{:{prec}} = {:{prec}}'.format('Gibberish', 2.7182, prec='.3'))
 #print('{:.3}'.format('Gibberish'))
 #print('{:.3}'.format(2.7182))
