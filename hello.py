@@ -1,7 +1,7 @@
 #print("Hello, world", end=';')
 #print('{0:.3f}'.format(1.0/3))
 #print('{:.3f}'.format(1.0/3), '{}'.format('hello'))
-#print('[{1:_^11}]\n[{0:_^11}]'.format('hello', 'привіт'))
+print('[{1:_^11s}]\n[{0:_^11s}]'.format('hello', 'привіт'))
 #print('[%10s]' % ('привіт',))
 #print('[{:10}]'.format('привіт'))
 #print('[{:>10}]'.format('привіт'))
