@@ -90,17 +90,17 @@
 from functools import wraps
 
 def add_one(f):
+    '''Adds one.'''
     @wraps(f)
     def wrapped(*args, **kwargs):
-        '''Adds one.'''
         result = f(*args, **kwargs)
         return result + 1
     return wrapped
 
 def double(f):
+    '''Doubles the value.'''
     @wraps(f)
     def wrapped(*args, **kwargs):
-        '''Doubles the value.'''
         result = f(*args, **kwargs)
         return result * 2
     return wrapped
@@ -108,6 +108,7 @@ def double(f):
 @double
 @add_one
 def calc(arg):
+    '''Calculates something.'''
     return arg
 
 print(calc(1))
