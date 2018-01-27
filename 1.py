@@ -147,4 +147,83 @@ print('Українська' > 'Русский')
 print('Українська' == 'Русский')
 print('Українська' < 'Русский')
 
+# '!a' apply ascii(), '!s' apply str(), '!r' apply repr()
+contents = 'eels'
+print('My hovercraft is full of {!r}.'.format(contents))
 
+table = { 'k1': 11, 'k2': 22, 'k3': 33 }
+print('K1: {0[k1]:d}; K2: {0[k2]:d}; K3: {0[k3]:d}'.format(table))
+print('K1: {k1:d}; K2: {k2:d}; K3: {k3:d}'.format(**table))
+
+with open('workfile') as f:
+    read_data = f.read()
+print(f.closed)
+
+with open('poem.txt') as f:
+    for line in f:
+        print(line, end='')
+
+with open('poem.txt') as f:
+    lines1 = list(f)
+    lines1 = lines1[::-1]
+    print(lines1)
+    print(f.tell())
+    f.seek(0)
+    lines2 = f.readlines()
+#    lines = sorted(lines, reverse=True)
+    lines2 = lines2[::-1]
+    print(lines2)
+
+with open('workfile', 'w') as f:
+    value = ('the answer', 42)
+    s = str(value)
+    f.write(s)
+
+import json
+
+json1 = json.dumps( [1, 'simple', 'list'] )
+print(json1)
+
+with open('workfile', 'w') as f:
+    json.dump(json1, f)
+    f.write('\n')
+
+with open('workfile') as f:
+    x = json.load(f)
+    print(x)
+
+from random import randint
+
+cons = ['b', 'd']
+print(len(cons))
+for i in range(0, 3):
+    con = cons[randint(0, len(cons) - 1)]
+    word = 'a' + con + 'i' + con + 'as'
+    print(word)
+
+
+class A:
+    def m1(self):
+        print('m1')
+
+a = A()
+a.m1()
+#a.m1 = 42
+#a.m1()
+
+
+print([].__class__)
+print('42'.__class__)
+print(int(42).__class__)
+
+print(a.m1.__self__)
+print(a.m1.__func__)
+
+data = ['a', 'b', 'c']
+print(len(data))
+
+for r in range(len(data), -1, -1):
+    print(r)
+
+table = {x: x*2 for x in range(1, 5)}
+print(table)
