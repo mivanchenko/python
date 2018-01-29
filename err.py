@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #try:
 #    text = input('Enter something: ')
 #except EOFError:
@@ -93,16 +95,49 @@
 #    if f:
 #        f.close()
 #    print('(Cleaning up: closed the file)')
+#
+#
+#import sys
+#import time
+#
+#with open('poem.txt') as f:
+#    for line in f:
+#        if len(line) == 0:
+#            break
+#        print(line, end='')
+#        sys.stdout.flush()
+#        print('Press ctrl+c now')
+#        time.sleep(2)
+
+class B(Exception):
+    pass
+
+class C(B):
+    pass
+
+class D(C):
+    pass
+
+for cls in [B, C, D]:
+    try:
+        raise cls()
+        print('raise')
+    except D:
+        print('D')
+    except C:
+        print('C')
+    except B:
+        print('B')
+    else:
+        print('else')
+    print('done')
 
 
-import sys
-import time
-
-with open('poem.txt') as f:
-    for line in f:
-        if len(line) == 0:
-            break
-        print(line, end='')
-        sys.stdout.flush()
-        print('Press ctrl+c now')
-        time.sleep(2)
+try:
+    raise Exception('spam', 'eggs')
+except Exception as inst:
+    print(type(inst))
+    print(inst.args)
+    print(inst)
+    x, y = inst.args
+    print('x =', x, 'y =', y)
