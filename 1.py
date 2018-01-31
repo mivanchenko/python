@@ -227,3 +227,88 @@ for r in range(len(data), -1, -1):
 
 table = {x: x*2 for x in range(1, 5)}
 print(table)
+
+import sys
+
+sys.stderr.write('err\n')
+#sys.exit()
+sys.stderr.write('err\n')
+
+import re
+
+matches = re.findall(r'\w+', 'abc abc')
+print(matches)
+matches = re.sub(r'(\w+) \1', r'\1', 'abc abc')
+print(matches)
+
+print('tea for too'.replace('too', 'two'))
+
+import random
+
+choice = random.choice(['apple', 'pear', 'banana'])
+print(choice)
+
+sample = random.sample(range(100), 10)
+print(sample)
+
+float = random.random()
+print(float)
+
+random_range = random.randrange(6)
+print(random_range)
+
+from urllib.request import urlopen
+
+#with urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl') as resp:
+#    for line in resp:
+#        line = line.decode('utf-8')
+#        line = line.replace('\n', '')
+#        if 'EST' in line or 'EDT' in line:
+#            print(line)
+
+from datetime import date
+today = date.today()
+print(today)
+print(today.strftime('%Y--%m--%d %H::%M::%S'))
+
+birthday = date(1964, 7, 31)
+age = today - birthday
+print(age.days, 'days')
+print(age)
+
+import zlib
+s = b'witch which has which witches wrist watch'
+print(len(s))
+t = zlib.compress(s)
+print(len(t))
+print(t)
+d = zlib.decompress(t)
+print(d)
+print(zlib.crc32(s))
+print(zlib.crc32(t))
+print(zlib.crc32(d))
+
+from timeit import Timer
+print(Timer('t=a; a=b; b=a', 'a=1; b=2').timeit())
+print(Timer('a,b = b,a', 'a=1; b=2').timeit())
+
+def average(values):
+    """Computes the averages.
+
+    >>> print(average([20, 30, 70]))
+    40.0
+    """
+    return sum(values) / len(values)
+
+import doctest
+doctest.testmod()
+
+import unittest
+
+class TestStats(unittest.TestCase):
+    def test_average(self):
+        self.assertEqual(average([20, 30, 70]), 40.0)
+
+unittest.main()
+
+
