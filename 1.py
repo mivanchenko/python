@@ -309,6 +309,108 @@ class TestStats(unittest.TestCase):
     def test_average(self):
         self.assertEqual(average([20, 30, 70]), 40.0)
 
-unittest.main()
+#unittest.main()
 
+import reprlib
 
+print(set('supercalifragilisticexpialidocious'))
+print(reprlib.repr(set('supercalifragilisticexpialidocious')))
+
+import pprint
+
+t = [[2, 42, 'abcdefg', 'abcdefg'], 3, 'zbcxvzbc', [1, 2, 3, 4, 5]]
+pprint.pprint(t, width=40)
+
+import textwrap
+
+doc = """The wrap() method is just like fill() except that it returns
+    a list of strings instead of one big string with newlines to separate
+    the wrapped lines."""
+print(textwrap.fill(doc, width=40))
+
+from string import Template
+
+t = Template('${village}folk send $$10 to $cause')
+print(t.substitute(village='Nottingham', cause='the ditch fund'))
+print(t.safe_substitute(village='Nottingham'))
+
+import struct
+
+#with open('myfile.zip', 'rb') as f:
+#    data = f.read()
+#
+#start = 0
+## I = 4 bytes
+## H = 2 bytes
+## < = little-endian byte order
+#fields = struct.unpack('<IIIHH', data[start:start+16)
+
+import threading
+
+class Async(threading.Thread):
+
+    def __init__(self):
+        threading.Thread.__init__(self)
+
+    def run(self):
+        pass
+
+background = Async()
+background.start()
+
+print('The main program continues to run in foreground.')
+
+background.join() # Wait for the background task to finish
+
+print('Main program waited until background was done.')
+
+import logging
+
+logging.debug('Debugging information')
+logging.info('Informational message')
+logging.warning('Warning:config file %s not found', 'server.conf')
+logging.error('Error occurred')
+logging.critical('Critical error -- shutting down')
+
+import weakref, gc
+
+from array import array
+
+a = array('H', [4000, 10, 700, 22222])
+print(sum(a))
+print(a[1:3])
+
+from collections import deque
+
+d = deque(["task1", "task2", "task3"])
+d.append("task4")
+print(d)
+print(d.popleft())
+
+import bisect
+
+scores = [(100, 'perl'), (200, 'tcl'), (400, 'lua'), (500, 'python')]
+bisect.insort(scores, (300, 'ruby'))
+print(scores)
+
+from heapq import heapify, heappop, heappush
+
+data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
+heapify(data)
+print(data)
+heappush(data, -5)
+print([heappop(data) for i in range(3)])
+
+from decimal import Decimal, getcontext
+
+print(round(Decimal('0.70') * Decimal('1.05'), 2))
+print(round(0.70 * 1.05, 2))
+
+print(Decimal('1.00') % Decimal('.10'))
+print(1.00 % .10)
+
+print( sum([Decimal('0.1')]*10) == Decimal('1.0') )
+print( sum([0.1]*10) == 1.0 )
+
+getcontext().prec = 36
+print(Decimal(1) / Decimal(7))
