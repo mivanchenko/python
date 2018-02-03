@@ -228,9 +228,34 @@ for r in range(len(data), -1, -1):
 table = {x: x*2 for x in range(1, 5)}
 print(table)
 
+import os
+
+for root, dirs, files, rootfd in os.fwalk('/home/michael/pe/python'):
+   print(root, "consumes", end=" ")
+   print(sum([os.stat(name, dir_fd=rootfd).st_size for name in files]),
+         end=" ")
+   print("bytes in", len(files), "non-directory files")
+   if '.git' in dirs:
+       dirs.remove('.git')  # don't visit git directories
+
+
+print(os.getenv('DESKTOP_SESSION'))
+#os.renames('oldfile', 'newfile')
+
+import shutil
+shutil.copyfile('newfile', 'oldfile')
+shutil.move('oldfile', 'newfile')
+
+import glob
+
+globs = glob.glob('*.py')
+print(globs)
+
 import sys
 
-sys.stderr.write('err\n')
+print(sys.argv)
+
+sys.stderr.write('oops\n')
 #sys.exit()
 sys.stderr.write('err\n')
 
@@ -414,3 +439,7 @@ print( sum([0.1]*10) == 1.0 )
 
 getcontext().prec = 36
 print(Decimal(1) / Decimal(7))
+
+
+
+
