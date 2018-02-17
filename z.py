@@ -158,7 +158,7 @@ def is_abecedarian(word):
 #        return False
 #    return is_abecedarian(word[1:])
 
-def nested_sum(list):
+def nested_sum(t):
     '''Returns the sum of the elements in a list.
 
     >>> print(nested_sum([1, 2, 3]))
@@ -169,11 +169,27 @@ def nested_sum(list):
     123
     '''
 
-    if isinstance(list[0], type(list)):
-        list[0] = nested_sum(list[0])
-    if len(list) == 1:
-        return list[0]
-    return list[0] + nested_sum(list[1:])
+    if isinstance(t[0], type(t)):
+        t[0] = nested_sum(t[0])
+    if len(t) == 1:
+        return t[0]
+    return t[0] + nested_sum(t[1:])
+
+def cumul(t):
+    '''Returns the list of cumulative sums from the given list.
+
+    >>> print(cumul([1, 2, 3]))
+    [1, 3, 6]
+    '''
+
+    c = []
+    i = 0
+    sum = 0
+    while i < len(t):
+        sum += t[i]
+        c.append(sum)
+        i += 1
+    return c
 
 import doctest
 doctest.testmod()

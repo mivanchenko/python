@@ -250,7 +250,7 @@ def is_abecedarian(word):
 #            count = 0
 #            i += 1
 
-def nested_sum(list):
+def nested_sum(t):
     '''Returns the sum of the elements in a list.
 
     >>> print(nested_sum([1, 2, 3]))
@@ -261,14 +261,14 @@ def nested_sum(list):
     123
     '''
 
-    if isinstance(list[0], type(list)):
-        list[0] = nested_sum(list[0])
-    if len(list) == 1:
-        return list[0]
-    return list[0] + nested_sum(list[1:])
+    if isinstance(t[0], type(t)):
+        t[0] = nested_sum(t[0])
+    if len(t) == 1:
+        return t[0]
+    return t[0] + nested_sum(t[1:])
 
-l = [[1], 2, [[3]]]
-#print(nested_sum(l))
+t = [[1], 2, [[3]]]
+#print(nested_sum(t))
 
 from collections import Iterable
 
@@ -333,7 +333,59 @@ def capitalize_all(t):
 #print("abc".capitalize())
 #print(''.join(capitalize_all('abc')))
 
+def cumul(t):
+    '''Returns the list of cumulative sums from the given list.
+
+    >>> print(cumul([1, 2, 3]))
+    [1, 3, 6]
+    '''
+
+    c = []
+    i = 0
+    sum = 0
+    while i < len(t):
+        sum += t[i]
+        c.append(sum)
+        i += 1
+    return c
+
+#print(cumul([1, 2, 3]))
+
+def middle(t):
+    '''Returns a new list containing all but the first and the last elements.
+
+    >>> print(middle([1, 2, 3, 4]))
+    [2, 3]
+    '''
+
+    return t[1:-1]
+
+def chop(t):
+    '''Modifies the list by removing the first and the last elements.
+       Returns None.
+
+    >>> print(chop([1, 2, 3, 4]))
+    None
+    '''
+
+    t.pop()
+    del t[0]
+
 import doctest
 doctest.testmod()
 
+#t = [1, 2, 3, 4]
+#print(middle(t))
+#print(t)
 
+#t = [1, 2, 3, 4]
+#print(chop(t))
+#print(t)
+
+import random
+
+choice = random.choice(['apple', 'pear', 'banana'])
+print(choice)
+
+sample = random.sample(range(100), 10)
+print(sample)
