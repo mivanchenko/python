@@ -52,6 +52,8 @@ def count(a_word, a_letter):
 
     >>> print(count('banana', 'a'))
     3
+    >>> print(count('banana', 'b'))
+    1
     >>> print(count('banana', 'n'))
     2
     '''
@@ -92,7 +94,7 @@ for l in fin:
 
 def avoids(word, forbidden_letters):
     '''Returns True if the word does not use any of the forbidden letters.
-    
+
     >>> print(avoids('banana', 's'))
     True
     >>> print(avoids('banana', 'so'))
@@ -115,7 +117,7 @@ def avoids(word, forbidden_letters):
 
 def uses_only(word, only_letters):
     '''Returns True if a word uses only letters in the list.
-    
+
     >>> print(uses_only('banana', 'ban'))
     True
     >>> print(uses_only('banana', 'band'))
@@ -191,9 +193,6 @@ def is_abecedarian(word):
         i += 1
     return True
 
-import doctest
-doctest.testmod()
-
 #forbidden_letters = input('Enter the string of forbidden letters: ')
 #print(forbidden_letters)
 #count_ok_words = 0
@@ -235,20 +234,106 @@ doctest.testmod()
 #        count_ok_words += 1
 #print(count_ok_words)
 
-count_ok_words = 0
-fin = open('words.txt')
-for line in fin:
-    word = line.strip()
-    i = 0
-    count = 0
-    while i < len(word)-1:
-        if word[i] == word[i+1]:
-            count += 1
-            if count == 3:
-                print(word)
-            i += 2
+#count_ok_words = 0
+#fin = open('words.txt')
+#for line in fin:
+#    word = line.strip()
+#    i = 0
+#    count = 0
+#    while i < len(word)-1:
+#        if word[i] == word[i+1]:
+#            count += 1
+#            if count == 3:
+#                print(word)
+#            i += 2
+#        else:
+#            count = 0
+#            i += 1
+
+def nested_sum(list):
+    '''Returns the sum of the elements in a list.
+
+    >>> print(nested_sum([1, 2, 3]))
+    6
+    >>> print(nested_sum([[1], 2, [[3]]]))
+    6
+    >>> print(nested_sum(['1', '2', '3']))
+    123
+    '''
+
+    if isinstance(list[0], type(list)):
+        list[0] = nested_sum(list[0])
+    if len(list) == 1:
+        return list[0]
+    return list[0] + nested_sum(list[1:])
+
+l = [[1], 2, [[3]]]
+#print(nested_sum(l))
+
+from collections import Iterable
+
+def flatten(items, ignore_types=(str, bytes)):
+    """Yield items from any nested iterable; see REF."""
+    for x in items:
+        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
+            yield from flatten(x)
         else:
-            count = 0
-            i += 1
+            yield x
+
+#print(list(flatten(l)))
+#for x in flatten(l):
+#    print(x)
+
+def is_abecedarian_for(word):
+    prev_letter = 'a'
+    for letter in word:
+        if letter < prev_letter:
+            return False
+        prev_letter = letter
+    return True
+
+def is_abecedarian_while(word):
+    i = 0
+    while i < len(word) - 1:
+        if word[i] > word[i+1]:
+            return False
+        i += 1
+    return True
+
+def is_abecedarian_recurse(word):
+    if len(word) <= 1:
+        return True
+    if word[0] > word[1]:
+        return False
+    return is_abecedarian(word[1:])
+
+word = 'abcderf'
+
+def wrap(func, *args):
+    def wrapped():
+        return func(*args)
+    return wrapped
+
+wrap_is_abecedarian_for     = wrap(is_abecedarian_for, word)
+wrap_is_abecedarian_while   = wrap(is_abecedarian_while, word)
+wrap_is_abecedarian_recurse = wrap(is_abecedarian_recurse, word)
+
+import timeit
+
+#print(timeit.timeit(wrap_is_abecedarian_for    , number=10000))
+#print(timeit.timeit(wrap_is_abecedarian_while  , number=10000))
+#print(timeit.timeit(wrap_is_abecedarian_recurse, number=10000))
+
+def capitalize_all(t):
+    res = []
+    for s in t:
+        res.append(s.capitalize())
+    return res
+
+#print("abc".capitalize())
+#print(''.join(capitalize_all('abc')))
+
+import doctest
+doctest.testmod()
 
 
