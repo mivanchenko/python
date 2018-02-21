@@ -385,7 +385,95 @@ doctest.testmod()
 import random
 
 choice = random.choice(['apple', 'pear', 'banana'])
-print(choice)
+#print(choice)
 
 sample = random.sample(range(100), 10)
-print(sample)
+#print(sample)
+
+#print('ok') if 0 else print(2)
+
+words = dict()
+fin = open('words.txt')
+for line in fin:
+    line = line.strip()
+    words[line] = 1
+
+#print(len(words))
+
+#word = input('Enter a word: ')
+#print(word) if word in words else print('No such word')
+
+def histogram(s):
+    d = dict()
+    for c in s:
+#        if c not in d:
+#            d[c] = 1
+#        else:
+#            d[c] += 1
+#        c = d.get(c, 1)
+        d[c] = d.get(c, 0) + 1
+    return d
+
+#print(histogram('alfa romeo'))
+
+def print_hist(h):
+    l = list()
+    for k in h:
+        l.append(k)
+    l.sort()
+    for k in l:
+        print(k, h[k])
+
+h = histogram('parrot')
+#print_hist(h)
+
+def reverse_lookup(d, v):
+    l = list()
+    for k in d:
+        if d[k] == v:
+            l.append(k)
+#            return k
+#    raise ValueError('value does not appear in a dict')
+    l.sort()
+    return l
+
+#print(reverse_lookup(h, 3))
+
+def invert_dict(d):
+    inverse = dict()
+    for key in d:
+        val = d[key]
+#        if val not in inverse:
+#            inverse[val] = [key]
+#        else:
+#            inverse[val].append(key)
+        inverse.setdefault(val, [])
+        inverse[val].append(key)
+    return inverse
+
+#print(invert_dict(histogram('parrot')))
+
+known = {0:0, 1:1}
+
+def example():
+#    global known
+    known[0] = 42
+#    known = list()
+
+#print(known)
+#example()
+#print(known)
+
+import pprint
+
+stuff = ['spam', 'eggs', 'lumberjack', 'knights', 'ni']
+stuff.insert(0, stuff[:])
+pp = pprint.PrettyPrinter(indent=4)
+#pp.pprint(stuff)
+pp = pprint.PrettyPrinter(width=41, compact=True)
+#pp.pprint(stuff)
+
+tup = ('spam', ('eggs', ('lumberjack', ('knights', ('ni', ('dead', ('parrot',
+('fresh fruit',))))))))
+pp = pprint.PrettyPrinter(depth=6)
+pp.pprint(tup)
