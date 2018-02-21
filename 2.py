@@ -476,4 +476,8 @@ pp = pprint.PrettyPrinter(width=41, compact=True)
 tup = ('spam', ('eggs', ('lumberjack', ('knights', ('ni', ('dead', ('parrot',
 ('fresh fruit',))))))))
 pp = pprint.PrettyPrinter(depth=6)
-pp.pprint(tup)
+#pp.pprint(tup)
+
+d = dict()
+d[(42,)] = 1234
+#print(d)
