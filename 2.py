@@ -451,7 +451,16 @@ def invert_dict(d):
         inverse[val].append(key)
     return inverse
 
+#print(histogram('parrot'))
 #print(invert_dict(histogram('parrot')))
+
+def invert_dict2(d):
+    inverse = dict()
+    for k, v in d.items():
+        inverse[v] = k
+    return inverse
+
+#print(invert_dict2(histogram('parrot')))
 
 known = {0:0, 1:1}
 
@@ -481,3 +490,100 @@ pp = pprint.PrettyPrinter(depth=6)
 d = dict()
 d[(42,)] = 1234
 #print(d)
+
+def sumall(*args):
+    return sum(args)
+#    a_sum = 0
+#    for a in args:
+#        a_sum += a
+#    return a_sum
+
+#print(sum((2, 3, 4)))
+#print(sumall(2, 3, 4))
+
+t1 = (1, 2, 3, 4)
+t2 = (0, 1, 3, 5)
+
+#for x, y in zip(t1, t2):
+#    if x == y:
+#        print(x)
+
+#for index, element in enumerate('abc'):
+#    print(index, element)
+
+directory = {
+    ('Cleese', 'John'): 42,
+    ('Vleese', 'Bohn'): 43,
+    ('Bleese', 'Zohn'): 44,
+}
+#print(directory)
+
+#for last, first in directory:
+#    print(first, last)
+#for last in directory:
+#    print(last)
+#for last, first in directory:
+#    print(first, last, directory[last, first])
+
+import random
+
+def sort_by_length(words):
+    t = []
+    for word in words:
+       t.append((len(word), word))
+    t.sort(reverse=True)
+    res = []
+    for length, word in t:
+        res.append(word)
+    return res
+
+def sort_by_length_2(words):
+    t = []
+    for word in words:
+       t.append((len(word), random.random(), word))
+
+    t.sort(reverse=True)
+
+    res = []
+    for length, _, word in t:
+        res.append(word)
+    return res
+
+def sorted_dict(words):
+    sorted_words = words[:]
+#    sorted_words.sort()
+    sorted_words.sort(reverse=True)
+    sorted_words = enumerate(sorted_words)
+    sorted_dict = dict()
+    for i, s in sorted_words:
+        sorted_dict[s] = i
+    return sorted_dict
+
+def sort_by_length_3(words):
+    t = []
+    sort_dict = sorted_dict(words)
+    for word in words:
+       t.append((len(word), sort_dict[word], word))
+
+    t.sort(reverse=True)
+
+    res = []
+    for length, _, word in t:
+        res.append(word)
+    return res
+
+words = []
+fin = open('words.txt')
+i = 0
+for l in fin:
+    l = l.strip()
+    words.append(l)
+    if i >= 20:
+        break
+    i += 1
+#words = sort_by_length(words)
+#words = sort_by_length_2(words)
+words = sort_by_length_3(words)
+#print(words[-4:])
+print(words)
+
