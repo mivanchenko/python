@@ -525,8 +525,6 @@ directory = {
 #for last, first in directory:
 #    print(first, last, directory[last, first])
 
-import random
-
 def sort_by_length(words):
     t = []
     for word in words:
@@ -537,13 +535,12 @@ def sort_by_length(words):
         res.append(word)
     return res
 
+import random
 def sort_by_length_2(words):
     t = []
     for word in words:
        t.append((len(word), random.random(), word))
-
     t.sort(reverse=True)
-
     res = []
     for length, _, word in t:
         res.append(word)
@@ -551,7 +548,6 @@ def sort_by_length_2(words):
 
 def sorted_dict(words):
     sorted_words = words[:]
-#    sorted_words.sort()
     sorted_words.sort(reverse=True)
     sorted_words = enumerate(sorted_words)
     sorted_dict = dict()
@@ -564,9 +560,7 @@ def sort_by_length_3(words):
     sort_dict = sorted_dict(words)
     for word in words:
        t.append((len(word), sort_dict[word], word))
-
     t.sort(reverse=True)
-
     res = []
     for length, _, word in t:
         res.append(word)
@@ -583,7 +577,39 @@ for l in fin:
     i += 1
 #words = sort_by_length(words)
 #words = sort_by_length_2(words)
-words = sort_by_length_3(words)
-#print(words[-4:])
-print(words)
+#words = sort_by_length_3(words)
+#print(words)
 
+#t = ['a', 'b', 'c']
+#print(t)
+#t.reverse()
+#print(t)
+#
+#print(sorted(t))
+#t2 = (*reversed(t),)
+#print(t2)
+#t2 = tuple(reversed(t))
+#print(t2)
+#t2 = tuple(reversed(t),)
+#print(t2)
+#t2 = list(reversed(t))
+#print(t2)
+
+#s = 'abc'
+#print(s)
+#t = list(s)
+#print(t)
+
+def most_frequent(s):
+    freq = dict()
+    for l in s:
+        freq[l] = freq.get(l, 0) + 1
+    ls = list()
+    for l in freq:
+        ls.append((freq[l], l))
+    ls.sort(reverse=True)
+#    print(ls)
+    for t in ls:
+        print(t[0], '=>', t[1])
+
+most_frequent('banana eats apple')
