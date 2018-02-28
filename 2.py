@@ -612,4 +612,61 @@ def most_frequent(s):
     for t in ls:
         print(t[0], '=>', t[1])
 
-most_frequent('banana eats apple')
+#most_frequent('banana eats apple')
+
+#print(callable(most_frequent))
+#print(callable(most_frequent('')))
+#print(callable(random.random))
+
+###
+
+def signature(w):
+    t = list(w)
+    t.sort()
+    return ''.join(t)
+
+def build_anagrams_set():
+    words = dict()
+    fin = open('words.txt')
+    for line in fin:
+        word = line.strip().lower()
+        sig = signature(word)
+        if sig not in words:
+            words[sig] = [word]
+        else:
+            words[sig].append(word)
+    return words
+
+def print_anagrams(anagrams):
+    for sig, words in anagrams.items():
+        if len(words) > 1:
+            print(words)
+
+anagrams = build_anagrams_set()
+#print_anagrams(anagrams)
+
+def anagrams_by_size(anagrams):
+    a_by_size = []
+    for sig, words in anagrams.items():
+        if len(words) > 1:
+            a_by_size.append((len(words), words))
+    a_by_size.sort(reverse=True)
+    return a_by_size
+
+sized_anagrams = anagrams_by_size(anagrams)
+#for a in sized_anagrams:
+#    print(a)
+
+def anagrams_of_length(anagrams, n):
+    a_of_len = []
+    for sig, words in anagrams.items():
+        if len(words) > 1 and len(sig) == n:
+            a_of_len.append((len(words), words))
+    a_of_len.sort(reverse=True)
+    return a_of_len
+
+len_anagrams = anagrams_of_length(anagrams, 8)
+print(len_anagrams[0])
+#for a in len_anagrams:
+#    print(a)
+
