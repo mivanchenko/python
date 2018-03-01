@@ -22,3 +22,12 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+import requests
+
+with open('./ids.txt') as ids:
+    for line in ids:
+        resp = requests.get(f'https://site.com/id/{line.strip()}',
+            headers={'X-Token': '<token goes here>'})
+        path = resp.json()['batch']['subbatch']
+        print(f'{line.strip()}\t->\t{path}')
