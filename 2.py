@@ -371,6 +371,35 @@ def chop(t):
     t.pop()
     del t[0]
 
+def is_metathesis(w1, w2):
+    '''Returns True if two words form a metathesis pair,
+       when one can be transformed into the other one
+       by swapping two letters.
+
+    >>> print(is_metathesis('converse', 'conserve'))
+    True
+    >>> print(is_metathesis('converse', 'ocnserve'))
+    False
+    >>> print(is_metathesis('converse', 'convers'))
+    False
+    >>> print(is_metathesis('converse', 'converser'))
+    False
+    '''
+
+    if len(w1) != len(w2):
+        return False
+#    assert len(w1) == len(w2)
+
+    errors = 0
+    for x, y in zip(w1, w2):
+        if x != y:
+            errors += 1
+        if errors > 2:
+            return False
+    if errors == 2:
+        return True
+    return False
+
 import doctest
 doctest.testmod()
 
@@ -392,11 +421,11 @@ sample = random.sample(range(100), 10)
 
 #print('ok') if 0 else print(2)
 
-words = dict()
-fin = open('words.txt')
-for line in fin:
-    line = line.strip()
-    words[line] = 1
+#words = dict()
+#fin = open('words.txt')
+#for line in fin:
+#    line = line.strip()
+#    words[line] = 1
 
 #print(len(words))
 
@@ -424,7 +453,7 @@ def print_hist(h):
     for k in l:
         print(k, h[k])
 
-h = histogram('parrot')
+#h = histogram('parrot')
 #print_hist(h)
 
 def reverse_lookup(d, v):
@@ -566,15 +595,16 @@ def sort_by_length_3(words):
         res.append(word)
     return res
 
-words = []
-fin = open('words.txt')
-i = 0
-for l in fin:
-    l = l.strip()
-    words.append(l)
-    if i >= 20:
-        break
-    i += 1
+#words = []
+#fin = open('words.txt')
+#i = 0
+#for l in fin:
+#    l = l.strip()
+#    words.append(l)
+#    if i >= 20:
+#        break
+#    i += 1
+
 #words = sort_by_length(words)
 #words = sort_by_length_2(words)
 #words = sort_by_length_3(words)
@@ -642,19 +672,18 @@ def print_anagrams(anagrams):
         if len(words) > 1:
             print(words)
 
-anagrams = build_anagrams_set()
-#print_anagrams(anagrams)
-
-def anagrams_by_size(anagrams):
-    a_by_size = []
+def get_anagrams():
+    anagrams = build_anagrams_set()
+    filtered_anagrams = []
     for sig, words in anagrams.items():
         if len(words) > 1:
-            a_by_size.append((len(words), words))
-    a_by_size.sort(reverse=True)
-    return a_by_size
+            filtered_anagrams.append((len(words), words))
+#    filtered_anagrams.sort(reverse=True)
+    filtered_anagrams.sort()
+    return filtered_anagrams
 
-sized_anagrams = anagrams_by_size(anagrams)
-#for a in sized_anagrams:
+#anagrams = get_anagrams()
+#for a in anagrams:
 #    print(a)
 
 def anagrams_of_length(anagrams, n):
@@ -665,8 +694,44 @@ def anagrams_of_length(anagrams, n):
     a_of_len.sort(reverse=True)
     return a_of_len
 
-len_anagrams = anagrams_of_length(anagrams, 8)
-print(len_anagrams[0])
+#anagrams = get_anagrams()
+#len_anagrams = anagrams_of_length(anagrams, 8)
 #for a in len_anagrams:
 #    print(a)
+
+###
+
+def get_anagrams_of_size(anagrams, size = 2):
+    a_by_size = []
+    for sig, words in anagrams.items():
+        if len(words) == size:
+            a_by_size.append((len(words), words))
+    a_by_size.sort()
+    return a_by_size
+
+#anagrams = get_anagrams()
+#len_anagrams = get_anagrams_of_size(anagrams, 2)
+#for l, a in len_anagrams:
+#    print(*a, is_metathesis(*a))
+
+#len_anagrams = anagrams_of_size(anagrams)
+#for l, a in len_anagrams:
+#    print(*a, is_metathesis(*a))
+
+
+anagrams = get_anagrams()
+for a, b in anagrams:
+    for w1 in b:
+        for w2 in b:
+            if w1 < w2 and is_metathesis(w1, w2):
+                print(w1, w2)
+
+
+
+
+
+
+
+
+
 
