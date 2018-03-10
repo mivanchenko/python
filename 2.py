@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 def repeat_lyrics():
     print_lyrics()
@@ -719,18 +719,81 @@ def get_anagrams_of_size(anagrams, size = 2):
 #    print(*a, is_metathesis(*a))
 
 
-anagrams = get_anagrams()
-for a, b in anagrams:
-    for w1 in b:
-        for w2 in b:
-            if w1 < w2 and is_metathesis(w1, w2):
-                print(w1, w2)
+#anagrams = get_anagrams()
+#for a, b in anagrams:
+#    for w1 in b:
+#        for w2 in b:
+#            if w1 < w2 and is_metathesis(w1, w2):
+#                print(w1, w2)
 
+#anagrams = ['a', 'b', 'c', 'd', 'e' ]
+#for a in anagrams:
+#    for b in anagrams:
+#        if a < b:
+#            print(a, b)
 
+#word = 'test'
+#for i in range(len(word)):
+#    c1 = word[:i]
+#    c2 = word[i+1:]
+#    print(c1, c2)
 
+#a = [None]
+#if not a:
+#    print('Empty')
+#if a:
+#    print('a')
+#
+#words = ['abc', 'test', 'it', 'show', 'reverse']
+#t = []
+#for w in words:
+#    t.append((len(w), w))
+#t.sort(reverse=True)
+#print(t)
+#words_sorted = []
+#for item in t:
+#    words_sorted.append(item[1])
+#print(words_sorted)
 
+#def only_letters(word):
+#    clean_word = []
+#    for letter in word:
+#        if letter.isalnum():
+#            clean_word.append(letter.lower())
+#    return ''.join(clean_word)
+#
+#fin = open('poem.txt')
+#for line in fin:
+#    line = line.strip()
+#    words = line.split()
+#    for w in words:
+#        print(only_letters(w), end=' ')
+#    print()
 
+#set1 = set([1, 2, 3, 4, 5])
+#set2 = set([4, 5, 6, 7, 8])
+#
+#print(set1.difference(set2))
+#print(set2.difference(set1))
+#
+#print(set1.intersection(set2))
+#print(set2.intersection(set1))
+#
+#print(set1.issuperset(set2))
+#print(set2.issuperset(set1))
+#
+#print(set1.symmetric_difference(set2))
+#print(set2.symmetric_difference(set1))
+#
+#print(set1.union(set2))
+#print(set2.union(set1))
 
+#hist = {'a': 2, 'b': 1}
+#t = []
+#for word, freq in hist.items():
+##    t.extend(word * freq)
+#    t.extend([word] * freq)
+#print(t)
 
 
 
