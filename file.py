@@ -137,3 +137,9 @@ import shelve
 #        md5[res] = path
 #print(len(md5.items()))
 
+import urllib.request
+
+#conn = urllib.request.urlopen('http://www.uszip.com/zip/02492')
+#conn = urllib.request.urlopen('http://thinkpython.com/secret.html')
+#for line in conn:
+#    print(line.strip().decode('utf-8'))
