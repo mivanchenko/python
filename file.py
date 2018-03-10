@@ -34,13 +34,13 @@ for dirpath, dirnames, filenames in os.walk(cwd):
     if '.git' in dirnames:
         dirnames.remove('.git')
 
-try:
-    fin = open('bad_file.txt', 'w')
-    for line in fin:
-        print(line)
-    fin.close()
-except:
-    pass
+#try:
+#    fin = open('bad_file.txt', 'w')
+#    for line in fin:
+#        print(line)
+#    fin.close()
+#except:
+#    pass
 #    print('Something went wrong')
 
 def sed(pattern, replacement, filename1, filename2):
@@ -64,4 +64,30 @@ def sed(pattern, replacement, filename1, filename2):
     fout.close()
     return
 
-sed('old', 'new', 'input1.txt', 'output1.txt')
+#sed('old', 'new', 'input1.txt', 'output1.txt')
+
+import pickle
+
+#t1 = [1, 2, 3]
+#t1_dump = pickle.dumps(t1)
+#print(t1_dump)
+#
+#t2 = pickle.loads(t1_dump)
+#print(t2)
+#
+#print(t1 == t2)
+#print(t1 is t2)
+
+import shelve
+
+#t1 = [1, 2, 3]
+#shelf = shelve.open('shelf.data', 'c')
+#shelf['1'] = t1
+#shelf.close()
+#
+#shelf = shelve.open('shelf.data')
+#try:
+#    print(shelf['1'])
+#    print(shelf['2'])
+#except:
+#    print('No data')
