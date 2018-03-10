@@ -91,3 +91,50 @@ import shelve
 #    print(shelf['2'])
 #except:
 #    print('No data')
+
+#cmd = 'ls -l'
+#fp = os.popen(cmd)
+#res = fp.read()
+#print(len(res))
+#stat = fp.close()
+#print(stat)
+
+#filename = 'poem.txt'
+#cmd = 'md5 ' + filename
+#fp = os.popen(cmd)
+#res = fp.read()
+#stat = fp.close()
+#print(res)
+
+# find duplicates
+
+#def get_paths_for(a_dirname, an_extension):
+#    paths = []
+#    path = os.path.abspath(a_dirname)
+#    for dirpath, dirnames, filenames in os.walk(path):
+#        if '.git' in dirnames:
+#            dirnames.remove('.git')
+#        for filename in filenames:
+#            name, ext = os.path.splitext(filename)
+#            if ext == an_extension:
+#                paths.append(os.path.join(dirpath, filename))
+#    return paths
+#
+#paths = get_paths_for('../../Music', '.mp3')
+#print(len(paths))
+#md5 = {}
+#for path in paths:
+#    cmd = 'md5 {!r}'.format(path)
+#    fp = os.popen(cmd)
+#    res = fp.read()
+#    stat = fp.close()
+#    if stat is not None:
+#        print('Something went wrong with', path)
+#    res = res.rstrip().split()[-1]
+#    if res in md5:
+#        print(path, 'is a duplicate of', md5[res])
+#    else:
+#        md5[res] = path
+#print(len(md5.items()))
+
+
