@@ -40,3 +40,14 @@ class Student(SchoolMember):
 
 #for member in members:
 #    member.tell()
+
+def print_attributes(obj):
+    for attr in obj.__dict__:
+        print(attr, getattr(obj, attr))
+
+s = Student('Mark', 29, 5)
+print(s)
+print(hasattr(s, 'age'))
+print(hasattr(s, 'ages'))
+print(s.__dict__)
+print_attributes(s)
