@@ -94,3 +94,7 @@ kanga.put_in_pouch(roo)
 #for i in range(0, 256, 51):
 #    print(i)
 #
+
+import random as ra
+
+print(ra.choice(('banana', 'apple')))
