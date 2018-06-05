@@ -9,6 +9,7 @@
 #print("\U000001b7")
 #print(chr(439))
 #print(ord("\N{Latin Capital Letter Ezh}"))
+#print("\N{CYRILLIC CAPITAL LETTER PE}")
 
 # The opposite method of bytes.decode() is str.encode()
 
