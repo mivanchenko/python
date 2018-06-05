@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 ord2utf = {
     207: '\u041F', # П
     224: '\u0430', # а
@@ -31,16 +33,24 @@ ord2utf = {
 #    : '\u',
 }
 
-with open('kuksha.txt') as f:
+if len(sys.argv) < 2:
+    print('Usage:', sys.argv[0], '[filename]')
+    exit()
+
+infile = sys.argv[1]
+
+with open(infile) as f:
 #    first_line = list(f)[0]
-#    print(first_line)
+#    print(first_line, end='')
 #    for letter in first_line:
 #        utf = ord2utf.get(ord(letter), '')
 #        print(utf, end='')
+#    print()
+
     for line in list(f):
         for letter in line:
             utf = ord2utf.get(ord(letter), '')
             print(utf, end='')
+        print()
 f.close()
-print()
 
