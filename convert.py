@@ -2,8 +2,41 @@
 
 import sys
 
+# taken from https://www.utf8-chartable.de/unicode-utf8-table.pl
+
+if len(sys.argv) < 2:
+    print('Usage:', sys.argv[0], '[filename]')
+    exit()
+
 ord2utf = {
+    192: '\u0410', # А
+    193: '\u0411', # Б
+    194: '\u0412', # В
+    195: '\u0413', # Г
+    196: '\u0414', # Д
+    197: '\u0415', # Е
+    198: '\u0416', # Ж
+    199: '\u0417', # З
+    200: '\u0418', # И
+    201: '\u0419', # Й
+    202: '\u041A', # К
+    203: '\u041B', # Л
+    204: '\u041C', # М
+    205: '\u041D', # Н
+    206: '\u041E', # О
     207: '\u041F', # П
+    208: '\u0420', # Р
+    210: '\u0421', # С
+    211: '\u0422', # Т
+    212: '\u0423', # У
+    213: '\u0424', # Ф
+    214: '\u0425', # Х
+    215: '\u0426', # Ц
+    216: '\u0427', # Ч
+    217: '\u0428', # Ш
+    218: '\u0429', # Щ
+    221: '\u042C', # Ь
+
     224: '\u0430', # а
     225: '\u0431', # б
     226: '\u0432', # в
@@ -30,27 +63,27 @@ ord2utf = {
     247: '\u0447', # ч
     248: '\u0448', # ш
     249: '\u0449', # щ
-#    : '\u',
+    252: '\u044C', # ь
 }
-
-if len(sys.argv) < 2:
-    print('Usage:', sys.argv[0], '[filename]')
-    exit()
 
 infile = sys.argv[1]
 
 with open(infile) as f:
-#    first_line = list(f)[0]
-#    print(first_line, end='')
-#    for letter in first_line:
-#        utf = ord2utf.get(ord(letter), '')
-#        print(utf, end='')
-#    print()
+    # first_line = list(f)[0]
+    # print(first_line, end='')
+    # for letter in first_line:
+    #     utf = ord2utf.get(ord(letter), '')
+    #     print(utf, end=' ')
+    #     utf = ord(letter)
+    #     print(utf, end=' ')
+    # print()
 
-    for line in list(f):
-        for letter in line:
-            utf = ord2utf.get(ord(letter), '')
-            print(utf, end='')
-        print()
+    with open('out.txt', 'w') as fout:
+        for line in list(f):
+            for letter in line:
+                utf = ord2utf.get(ord(letter), letter)
+                print(utf, end='')
+                fout.write(utf)
+    fout.close()
 f.close()
 
