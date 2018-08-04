@@ -35,7 +35,18 @@ class StrCase(unittest.TestCase):
 #if __name__ == '__main__':
 #    unittest.main(verbosity=2)
 
-code = 0e0
+#code = 0e0
+#
+#if code:
+#    print('ok')
 
-if code:
-    print('ok')
+code: int = 4
+label: str = '<unknown>'
+#print(code)
+
+import re
+
+#matches = re.findall(r'\w+', 'abc abc')
+#print(matches)
+#matches = re.sub(r'(\w+) \1', r'\1', 'abc abc')
+#print(matches)

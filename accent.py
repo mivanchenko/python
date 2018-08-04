@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
-letter = 'и'
-print(letter + '\u0301')
+import sys
 
+letter = 'є'
+
+if len(sys.argv) == 2:
+    letter = sys.argv[1]
+
+print(letter + '\u0301')
