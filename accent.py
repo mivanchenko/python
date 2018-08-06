@@ -2,9 +2,8 @@
 
 import sys
 
-letter = 'є'
+#letter = 'є'
 
-if len(sys.argv) == 2:
-    letter = sys.argv[1]
-
-print(letter + '\u0301')
+if len(sys.argv) >= 2:
+    for letter in sys.argv[1:]:
+        print(letter + '\u0301')
