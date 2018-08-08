@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 def repeat_lyrics():
     print_lyrics()
@@ -205,14 +205,15 @@ def is_abecedarian(word):
 #print(count_ok_words)
 
 #allowed_letters = 'acefhlo'
-#count_ok_words = 0
-#fin = open('words.txt')
-#for line in fin:
-#    word = line.strip()
-#    if uses_only(word, allowed_letters):
-#        print(word, end=' ')
-#        count_ok_words += 1
-#print(count_ok_words)
+allowed_letters = 'asdfghjkl'
+count_ok_words = 0
+fin = open('words.txt')
+for line in fin:
+    word = line.strip()
+    if uses_only(word, allowed_letters):
+        print(word, end=' ')
+        count_ok_words += 1
+print(count_ok_words)
 
 #required_letters = 'aeiouy'
 #count_ok_words = 0
