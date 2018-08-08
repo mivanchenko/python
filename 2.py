@@ -270,15 +270,15 @@ def nested_sum(t):
 t = [[1], 2, [[3]]]
 #print(nested_sum(t))
 
-from collections import Iterable
-
-def flatten(items, ignore_types=(str, bytes)):
-    """Yield items from any nested iterable; see REF."""
-    for x in items:
-        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
-            yield from flatten(x)
-        else:
-            yield x
+#from collections import Iterable
+#
+#def flatten(items, ignore_types=(str, bytes)):
+#    """Yield items from any nested iterable; see REF."""
+#    for x in items:
+#        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
+#            yield from flatten(x)
+#        else:
+#            yield x
 
 #print(list(flatten(l)))
 #for x in flatten(l):
@@ -508,7 +508,7 @@ stuff = ['spam', 'eggs', 'lumberjack', 'knights', 'ni']
 stuff.insert(0, stuff[:])
 pp = pprint.PrettyPrinter(indent=4)
 #pp.pprint(stuff)
-pp = pprint.PrettyPrinter(width=41, compact=True)
+#pp = pprint.PrettyPrinter(width=41, compact=True)
 #pp.pprint(stuff)
 
 tup = ('spam', ('eggs', ('lumberjack', ('knights', ('ni', ('dead', ('parrot',
@@ -670,7 +670,8 @@ def build_anagrams_set():
 def print_anagrams(anagrams):
     for sig, words in anagrams.items():
         if len(words) > 1:
-            print(words)
+#            print(words)
+            pass
 
 def get_anagrams():
     anagrams = build_anagrams_set()
