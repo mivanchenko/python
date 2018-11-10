@@ -1,33 +1,25 @@
 #!/usr/bin/env python3
 
-def repeat_lyrics():
-    print_lyrics()
-    print_lyrics()
-def print_lyrics():
-    print(1)
-    print(2)
-#repeat_lyrics()
-
 fruit = 'banana'
 index = 0
-#while index < len(fruit):
-#    zindex = len(fruit) - 1 - index
-#    print(fruit[zindex], end='')
-#    index += 1
-#print()
+while index < len(fruit):
+    zindex = len(fruit) - 1 - index
+    print(fruit[zindex], end='')
+    index += 1
+print()
 
-#for char in fruit:
-#    print(char, end='')
-#print()
+for char in fruit:
+    print(char, end='')
+print()
 
 prefixes = 'JKLMNOPQ'
 suffix = 'ack'
 
-#for letter in prefixes:
-#    print(letter, end='')
-#    if letter in ('O', 'Q'):
-#        print('u', end='')
-#    print(suffix)
+for letter in prefixes:
+    print(letter, end='')
+    if letter in ('O', 'Q'):
+        print('u', end='')
+    print(suffix)
 
 def find(word, letter, start):
     '''Finds the letter in a string.
