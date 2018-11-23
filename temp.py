@@ -584,11 +584,25 @@ def is_abecedarian(word):
         i += 1
     return True
 
+from importlib import reload;
+#import lru_cache;
+#reload(lru_cache)
 
+from datetime import datetime
+#
+#print(datetime.utcnow())
 
-
-
-
+## FizzBuzz
+#for i in range(1, 100):
+#    if i % 3 == 0 and i % 5 == 0:
+#        print('FizzBuzz', end=' ')
+#    elif i % 3 == 0:
+#        print('Fizz', end=' ')
+#    elif i % 5 == 0:
+#        print('Buzz', end=' ')
+#    else:
+#        print(i, end=' ')
+#print()
 
 
 
